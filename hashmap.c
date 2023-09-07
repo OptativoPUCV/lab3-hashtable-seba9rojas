@@ -56,21 +56,21 @@ HashMap * createMap(long capacity) {
   if (mapa == NULL){
     return NULL;
   }
-  map->capacity = capacity;
-  map->keys = malloc(sizeof(int) * capacity);
-  map->values = malloc(sizeof(int) * capacity);
+  mapa->capacity = capacity;
+  mapa->keys = malloc(sizeof(int) * capacity);
+  mapa->values = malloc(sizeof(int) * capacity);
 
-  if (map->keys == NULL || map->values == NULL) {
+  if (mapa->keys == NULL || map->values == NULL) {
         //perror("Error al asignar memoria para las claves o valores del HashMap");
-        free(map->keys);
-        free(map->values);
-        free(map);
+        free(mapa->keys);
+        free(mapa->values);
+        free(mapa);
         return NULL;
     }
 
     for (int i = 0; i < capacity; i++) {
-        map->keys[i] = -1; 
-        map->values[i] = 0;
+        mapa->keys[i] = -1; 
+        mapa->values[i] = 0;
     }
 
     return map;

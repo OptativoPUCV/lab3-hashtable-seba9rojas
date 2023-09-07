@@ -98,22 +98,22 @@ HashMap * createMap(long capacity) {
   
 
 void eraseMap(HashMap * map,  char * key) {
-  int i,j;
-  int valorEncontrar=0;
   Pair* newPair= (Pair*)malloc(sizeof(Pair));
   newPair->key = key;
   newPair->value = value;
 
-  for(i=0;i<map->capacity;i++){
-    if(strcmp(map->newPair[i]->key)==NULL){
-      valorEncontrar=1;
-      break;
+  long i=hash(key,map->capacity);
+  long copia=i;
+  while(1){
+    Pair* newAux=map->buckets[i];
+    if(newAux!=NULL && strcmp(newAux->key)==0){
+      map->size--;
+      map->buckets[i]->key=newPair;
+      return;
     }
-    if(encontrado){
-      for(j=i;j<map->capacity-1;j++){
-        map->newPair[j]=map->newPair[j+1];
-      }
-      map->capacity--;
+    i=(i+1)%map->capacity;
+    if(i==copia){
+      return;
     }
   }
 

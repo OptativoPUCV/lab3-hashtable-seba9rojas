@@ -60,7 +60,7 @@ HashMap * createMap(long capacity) {
   mapa->keys = malloc(sizeof(int) * capacity);
   mapa->values = malloc(sizeof(int) * capacity);
 
-  if (mapa->keys == NULL || map->values == NULL) {
+  if (mapa->keys == NULL || mapa->values == NULL) {
         //perror("Error al asignar memoria para las claves o valores del HashMap");
         free(mapa->keys);
         free(mapa->values);
@@ -73,7 +73,7 @@ HashMap * createMap(long capacity) {
         mapa->values[i] = 0;
     }
 
-    return map;
+    return mapa;
 }
 
 void eraseMap(HashMap * map,  char * key) {    

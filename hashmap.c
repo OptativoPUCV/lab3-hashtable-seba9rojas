@@ -121,18 +121,7 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair *searchMap(HashMap * map,  char * key) {
-  Pair* newPair= (Pair*)malloc(sizeof(Pair));
-  newPair->key = key;
-  newPair->value = value;
-
-  long i=hash(key,map->capacity);
-  long copia=i;
-  while(1){
-    if()
-
-
-    
-  }
+  
   
 
   

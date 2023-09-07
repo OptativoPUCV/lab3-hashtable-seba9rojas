@@ -412,3 +412,21 @@ hashmap.c:129:8: error: unused variable ‘copia’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 24f175b
+Thu 07 Sep 2023 07:45:03 PM UTC: 
+ hashmap.c | 11 -----------
+ 1 file changed, 11 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:103:20: error: ‘value’ undeclared (first use in this function)
+  103 |   newPair->value = value;
+      |                    ^~~~~
+hashmap.c:103:20: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:109:24: error: too few arguments to function ‘strcmp’
+  109 |     if(newAux!=NULL && strcmp(newAux->key)==0){
+      |                        ^~~~~~
+In file included from test.c:3:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/string.h:140:12: note: declared here
+  140 | extern int strcmp (const char *__s1, const char *__s2)
+      |            ^~~~~~
+Compilation failed
+ee455fd

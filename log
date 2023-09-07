@@ -777,3 +777,17 @@ Thu 07 Sep 2023 10:33:42 PM UTC:
  tests:  12|2
 total_score: 50/70
 c820191
+Thu 07 Sep 2023 10:35:15 PM UTC: 
+ hashmap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:161:11: error: ‘return’ with no value, in function returning non-void [-Werror=return-type]
+  161 |           return;
+      |           ^~~~~~
+hashmap.c:153:7: note: declared here
+  153 | Pair *nextMap(HashMap * map) {
+      |       ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4cc5f75

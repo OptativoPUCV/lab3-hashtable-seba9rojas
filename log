@@ -637,3 +637,16 @@ Thu 07 Sep 2023 10:00:28 PM UTC:
  tests:  11|2
 total_score: 50/70
 615016e
+Thu 07 Sep 2023 10:08:27 PM UTC: 
+ hashmap.c | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:146:23: error: expected ‘;’ before ‘}’ token
+  146 |         map->current++
+      |                       ^
+      |                       ;
+  147 |     }
+      |     ~                  
+Compilation failed
+690c7f9

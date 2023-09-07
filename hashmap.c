@@ -69,7 +69,7 @@ void enlarge(HashMap * map) {
 }
 
 //===========================================
-// Función crear Mapa
+// Función para crear el Mapa
 //===========================================
 HashMap * createMap(long capacity) {
   HashMap *mapa = malloc(sizeof(HashMap));
@@ -87,7 +87,6 @@ HashMap * createMap(long capacity) {
     mapa->size = 0;
     mapa->current = -1; 
 
-    // Inicializar los buckets
     for (long i = 0; i < capacity; i++) {
         mapa->buckets[i] = NULL;
     }
@@ -114,9 +113,11 @@ void eraseMap(HashMap * map,  char * key) {
   }
 }
 
+//===========================================
+// Función para buscar un par clave valor en el mapa
+//===========================================
 Pair *searchMap(HashMap * map,  char * key) {
   long i=hash(key,map->capacity);
-
   while(1){
     Pair* current=map->buckets[i];
 
@@ -139,6 +140,17 @@ Pair *searchMap(HashMap * map,  char * key) {
 }
 
 Pair *firstMap(HashMap * map) {
+    map->current = 0;
+
+    while (map->current < map->capacity && map->buckets[map->current] == NULL) {
+        map->current++
+    }
+
+    if (map->current >= map->capacity) {
+        return NULL;
+    }
+
+    return map->buckets[map->current];
 
     return NULL;
 }

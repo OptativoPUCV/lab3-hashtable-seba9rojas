@@ -430,3 +430,17 @@ In file included from test.c:3:
       |            ^~~~~~
 Compilation failed
 ee455fd
+Thu 07 Sep 2023 07:46:51 PM UTC: 
+ hashmap.c | 3 ---
+ 1 file changed, 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:106:24: error: too few arguments to function ‘strcmp’
+  106 |     if(newAux!=NULL && strcmp(newAux->key)==0){
+      |                        ^~~~~~
+In file included from test.c:3:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/string.h:140:12: note: declared here
+  140 | extern int strcmp (const char *__s1, const char *__s2)
+      |            ^~~~~~
+Compilation failed
+423ce8a

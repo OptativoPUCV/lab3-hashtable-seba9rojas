@@ -42,11 +42,11 @@ int is_equal(void* key1, void* key2){
 // Función para insertar mapa
 //===========================================
 void insertMap(HashMap * map, char * key, void * value) {
-  Pair* newPair= ((Pair*)malloc(sizeof(Pair));
-  new->key = key;
-  new->value = value;
+  Pair* newPair= (Pair*)malloc(sizeof(Pair));
+  newPair->key = key;
+  newPair->value = value;
 
-  if()
+  //if()
 
 
 }

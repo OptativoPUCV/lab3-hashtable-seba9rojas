@@ -128,21 +128,13 @@ Pair *searchMap(HashMap * map,  char * key) {
       return current;
     }
 
-    i=(i+1)%map->size;
+    i=(i+1)%map->capacity;
 
     if(i==map->current){
       break;
     }
   }
-
-  
-  
-
-  
-
-  
-
-    return NULL;
+  return NULL;
 }
 
 Pair *firstMap(HashMap * map) {

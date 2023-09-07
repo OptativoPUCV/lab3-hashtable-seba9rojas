@@ -108,7 +108,7 @@ void eraseMap(HashMap * map,  char * key) {
     Pair* newAux=map->buckets[i];
     if(newAux!=NULL && strcmp(newAux->key)==0){
       map->size--;
-      map->buckets[i]->key=newPair;
+      map->buckets[i]->key=NULL;
       return;
     }
     i=(i+1)%map->capacity;

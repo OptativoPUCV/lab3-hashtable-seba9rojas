@@ -52,28 +52,27 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
-  HashMap* mapa=malloc(sizeof(HashMap));
-  if (mapa == NULL){
-    perror("ERROR");
-    return NULL;
-  }
-  mapa->key = malloc(sizeof(int) * capacity);
-  mapa->value = malloc(sizeof(int) * capacity);
-
-  if (mapa->key == NULL || mapa->value == NULL) {
-        perror("Error al asignar memoria para las claves o valores del HashMap");
-        free(mapa->key);
-        free(mapa->value);
-        free(mapa);
+  HashMap *map = malloc(sizeof(HashMap));
+    if (map == NULL) {
+        perror("Error al asignar memoria para el HashMap");
         return NULL;
     }
 
-  for (int i = 0; i < capacity; i++) {
-      mapa->key[i] = -1; 
-      mapa->value[i] = 0;
-  }
+    map->capacity = capacity;
+    map->pairs = malloc(sizeof(Pair) * capacity);
+    if (map->pairs == NULL) {
+        perror("Error al asignar memoria para los pares del HashMap");
+        free(map);
+        return NULL;
+    }
 
-  return mapa;
+    // Inicializar los pares del HashMap
+    for (long i = 0; i < capacity; i++) {
+        map->pairs[i].key = NULL;
+        map->pairs[i].value = NULL;
+    }
+
+    return map;
 }
 
 void eraseMap(HashMap * map,  char * key) {    

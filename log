@@ -179,3 +179,22 @@ hashmap.c:73:11: error: ‘HashMap’ {aka ‘struct HashMap’} has no member n
       |           ^~
 Compilation failed
 86bd732
+Thu 07 Sep 2023 01:54:58 PM UTC: 
+ hashmap.c | 29 ++++++++++++++---------------
+ 1 file changed, 14 insertions(+), 15 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:62:8: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘pairs’
+   62 |     map->pairs = malloc(sizeof(Pair) * capacity);
+      |        ^~
+hashmap.c:63:12: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘pairs’
+   63 |     if (map->pairs == NULL) {
+      |            ^~
+hashmap.c:71:12: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘pairs’
+   71 |         map->pairs[i].key = NULL;
+      |            ^~
+hashmap.c:72:12: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘pairs’
+   72 |         map->pairs[i].value = NULL;
+      |            ^~
+Compilation failed
+01b7f94

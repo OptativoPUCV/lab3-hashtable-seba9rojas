@@ -885,3 +885,16 @@ hashmap.c:26:6: note: declared here
       |      ^~~~
 Compilation failed
 92b35a4
+Thu 07 Sep 2023 11:02:22 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:76:27: error: too few arguments to function ‘hash’
+   76 |           long newIndex = hash(map->buckets[i]->key) ;
+      |                           ^~~~
+hashmap.c:26:6: note: declared here
+   26 | long hash( char * key, long capacity) {
+      |      ^~~~
+Compilation failed
+1b8f27c

@@ -115,10 +115,10 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair *searchMap(HashMap * map,  char * key) {
-  int i=hash(key);
+  int i=hash(key)%map->size;
 
   while(1){
-    Pair* current=map->pairs[i];
+    Pair* current=map->buckets[i];
 
     if(current==NULL){
       return NULL;

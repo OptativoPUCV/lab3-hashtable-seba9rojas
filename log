@@ -940,3 +940,14 @@ Thu 07 Sep 2023 11:08:18 PM UTC:
  tests:  13|1
 total_score: 60/70
 d91eaab
+Thu 07 Sep 2023 11:09:21 PM UTC: 
+ hashmap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:79:21: error: ‘newIndex’ undeclared (first use in this function)
+   79 |             cont = (newIndex + 1) % map->capacity;
+      |                     ^~~~~~~~
+hashmap.c:79:21: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+184fa7a

@@ -76,7 +76,7 @@ void enlarge(HashMap * map) {
           long cont = hash(map->buckets[i]->key,map->capacity) ;
             
           while (newBuckets[cont] != NULL) {
-            cont = (newIndex + 1) % map->capacity;
+            cont = (cont + 1) % map->capacity;
           }
           newBuckets[cont] = map->buckets[i];
       }

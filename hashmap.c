@@ -76,7 +76,7 @@ void enlarge(HashMap * map) {
       Pair *current = old_buckets[i];
       while (current != NULL) {
           insertMap(map, current->key, current->value);
-            current = current->next;
+          current = current->next;
         }
     }
 
@@ -89,7 +89,7 @@ void enlarge(HashMap * map) {
           free(temp);
         }
     }
-    free(old_buckets);
+    free(old_buckets)
 }
 
 

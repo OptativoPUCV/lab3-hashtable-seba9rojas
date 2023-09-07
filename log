@@ -272,3 +272,20 @@ Thu 07 Sep 2023 07:01:34 PM UTC:
  tests:  1|5
 total_score: 10/70
 dc850cb
+Thu 07 Sep 2023 07:18:10 PM UTC: 
+ hashmap.c | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:54:30: error: expected ‘;’ before ‘map’
+   54 |       map->buckets[i]=newPair
+      |                              ^
+      |                              ;
+   55 |       map->size++;
+      |       ~~~                     
+hashmap.c: At top level:
+hashmap.c:67:1: error: expected identifier or ‘(’ before ‘}’ token
+   67 | }
+      | ^
+Compilation failed
+6ffa769

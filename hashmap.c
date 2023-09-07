@@ -57,7 +57,6 @@ HashMap * createMap(long capacity) {
     perror("ERROR");
     return NULL;
   }
-  mapa->capacity = capacity;
   mapa->key = malloc(sizeof(int) * capacity);
   mapa->value = malloc(sizeof(int) * capacity);
 
@@ -69,12 +68,12 @@ HashMap * createMap(long capacity) {
         return NULL;
     }
 
-    for (int i = 0; i < capacity; i++) {
-        mapa->key[i] = -1; 
-        mapa->value[i] = 0;
-    }
+  for (int i = 0; i < capacity; i++) {
+      mapa->key[i] = -1; 
+      mapa->value[i] = 0;
+  }
 
-    return mapa;
+  return mapa;
 }
 
 void eraseMap(HashMap * map,  char * key) {    

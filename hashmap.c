@@ -156,6 +156,15 @@ Pair *firstMap(HashMap * map) {
 }
 
 Pair *nextMap(HashMap * map) {
+  map->curren++;
+  
+  while (map->current < map->capacity && map->buckets[map->current] == NULL) {
+        map->current--;
+    }
+    if (map->current > map->capacity) {
+        return NULL;
+    }
 
+    return map->buckets[map->current];
     return NULL;
 }

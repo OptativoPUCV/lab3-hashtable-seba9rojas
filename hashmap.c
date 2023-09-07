@@ -121,11 +121,17 @@ Pair *searchMap(HashMap * map,  char * key) {
     Pair* current=map->pairs[i];
 
     if(current==NULL){
-      return NULL;
+      return NULL
     }
     if(strcmp(current->key,key)==0){
       map->current=i;
       return current;
+    }
+
+    i=(i+1)%map->size;
+
+    if(i==map->current){
+      break;
     }
   }
 

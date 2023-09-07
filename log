@@ -934,3 +934,9 @@ hashmap.c:86:20: error: ‘new_buckets’ undeclared (first use in this function
 hashmap.c:86:20: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 d347e76
+Thu 07 Sep 2023 11:08:18 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  13|1
+total_score: 60/70
+d91eaab

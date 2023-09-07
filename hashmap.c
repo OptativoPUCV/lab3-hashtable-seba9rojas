@@ -83,7 +83,7 @@ void enlarge(HashMap * map) {
     }
 
     free(map->buckets);
-    map->buckets = new_buckets;
+    map->buckets = newBuckets;
 }
 
 //===========================================

@@ -155,14 +155,17 @@ Pair *firstMap(HashMap * map) {
 }
 
 Pair *nextMap(HashMap * map) {
-  map->current++;
-  
-  while (map->current < map->capacity && map->buckets[map->current] == NULL) {
-        map->current++;
-    }
-    if (map->current >= map->capacity) {
+  if (map->current == -1) {
         return NULL;
     }
 
-    return map->buckets[map->current];
+  for (int i = map->current + 1; i < map->capacity; i++) {
+      if (map->buckets[i] != NULL) {
+          map->current = i;
+          return map->buckets[i];
+      }
+  }
+
+  map->current = -1;
+  return NULL
 }

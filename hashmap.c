@@ -73,7 +73,7 @@ void enlarge(HashMap * map) {
 
   for (int i = 0; i < map->capacity / 2; i++) {
       if (map->buckets[i] != NULL) {
-          long newIndex = hash(map->buckets[i]->key) ;
+          long newIndex = hash(key,map->capacity) ;
             
           while (new_buckets[newIndex] != NULL) {
             newIndex = (newIndex + 1) % map->capacity;

@@ -898,3 +898,15 @@ hashmap.c:26:6: note: declared here
       |      ^~~~
 Compilation failed
 1b8f27c
+Thu 07 Sep 2023 11:03:33 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:76:32: error: ‘key’ undeclared (first use in this function); did you mean ‘key_t’?
+   76 |           long newIndex = hash(key,map->capacity) ;
+      |                                ^~~
+      |                                key_t
+hashmap.c:76:32: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+bfe866c

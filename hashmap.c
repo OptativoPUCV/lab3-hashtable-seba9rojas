@@ -63,10 +63,36 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+  enlarge_called = 1; //no borrar (testing purposes)
+  Pair ** old_buckets = map->buckets;
 
+  map->capacity *= 2;
 
+  map->buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+
+  map->size = 0;
+
+  for (int i = 0; i < map->capacity / 2; i++) {
+      Pair *current = old_buckets[i];
+      while (current != NULL) {
+          insertMap(map, current->key, current->value);
+            current = current->next;
+        }
+    }
+
+  for (int i = 0; i < map->capacity / 2; i++) {
+      Pair *current = old_buckets[i];
+      while (current != NULL) {
+          Pair *temp = current;
+          current = current->next;
+          free(temp->key);
+          free(temp);
+        }
+    }
+    free(old_buckets);
 }
+
+
 
 //===========================================
 // Función para crear el Mapa

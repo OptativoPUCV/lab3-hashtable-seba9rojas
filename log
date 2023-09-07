@@ -797,3 +797,16 @@ Thu 07 Sep 2023 10:35:29 PM UTC:
  tests:  12|2
 total_score: 50/70
 de6d33b
+Thu 07 Sep 2023 10:50:20 PM UTC: 
+ hashmap.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:79:30: error: ‘Pair’ has no member named ‘next’
+   79 |             current = current->next;
+      |                              ^~
+hashmap.c:87:28: error: ‘Pair’ has no member named ‘next’
+   87 |           current = current->next;
+      |                            ^~
+Compilation failed
+15111b9

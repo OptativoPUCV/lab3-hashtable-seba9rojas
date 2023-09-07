@@ -210,3 +210,9 @@ hashmap.c:60:5: error: ‘mapa’ undeclared (first use in this function); did y
 hashmap.c:60:5: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 65bd03c
+Thu 07 Sep 2023 02:03:11 PM UTC: 
+ hashmap.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+ tests:  1|5
+total_score: 10/70
+ddf8403

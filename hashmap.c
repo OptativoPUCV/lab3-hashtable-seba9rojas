@@ -51,29 +51,29 @@ void enlarge(HashMap * map) {
 }
 
 HashMap * createMap(long capacity) {
-  HashMap *map = malloc(sizeof(HashMap));
-    if (map == NULL) {
+  HashMap *mapa = malloc(sizeof(HashMap));
+    if (mapa == NULL) {
         perror("Error al asignar memoria para el HashMap");
         return NULL;
     }
 
     mapa->buckets=malloc(sizeof(Pair *) * capacity);
-    if(map->buckets==NULL){
+    if(mapa->buckets==NULL){
       perror("Error al asignar memoria para los buckets del HashMap");
-      free(map);
+      free(mapa);
       return NULL;
     }
 
-    map->capacity = capacity;
-    map->size = 0;
-    map->current = -1; // Inicializar el índice del último dato accedido
+    mapa->capacity = capacity;
+    mapa->size = 0;
+    mapa->current = -1; // Inicializar el índice del último dato accedido
 
     // Inicializar los buckets
     for (long i = 0; i < capacity; i++) {
-        map->buckets[i] = NULL;
+        mapa->buckets[i] = NULL;
     }
 
-    return map;
+    return mapa;
 }
 
 

@@ -872,3 +872,16 @@ hashmap.c:79:28: error: ‘Pair’ has no member named ‘next’
       |                            ^~
 Compilation failed
 d2bd1d9
+Thu 07 Sep 2023 11:01:12 PM UTC: 
+ hashmap.c | 24 ++++++++++++++----------
+ 1 file changed, 14 insertions(+), 10 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:76:27: error: too few arguments to function ‘hash’
+   76 |           long newIndex = hash(map->buckets[i]->key) % map->capacity;
+      |                           ^~~~
+hashmap.c:26:6: note: declared here
+   26 | long hash( char * key, long capacity) {
+      |      ^~~~
+Compilation failed
+92b35a4

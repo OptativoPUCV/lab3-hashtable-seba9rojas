@@ -39,7 +39,7 @@ int is_equal(void* key1, void* key2){
 }
 
 //===========================================
-// Función para insertar mapa
+// Función para insertar un nuevo dato en el mapa
 //===========================================
 void insertMap(HashMap * map, char * key, void * value) {
   Pair* newPair= (Pair*)malloc(sizeof(Pair));
@@ -115,6 +115,19 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair *searchMap(HashMap * map,  char * key) {
+  int i=hash(key)%map->size;
+
+  while(1){
+    Pair* current=map->pairs[i];
+
+    if(current==NULL){
+      return NULL;
+    }
+    if(strcmp(current->key,key)==0){
+      map->current=i;
+      return current;
+    }
+  }
 
   
   

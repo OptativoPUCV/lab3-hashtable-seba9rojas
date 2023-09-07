@@ -467,3 +467,19 @@ Thu 07 Sep 2023 09:45:05 PM UTC:
  tests:  8|3
 total_score: 40/70
 98c7ac7
+Thu 07 Sep 2023 09:50:04 PM UTC: 
+ hashmap.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:118:9: error: too few arguments to function ‘hash’
+  118 |   int i=hash(key)%map->size;
+      |         ^~~~
+hashmap.c:26:6: note: declared here
+   26 | long hash( char * key, long capacity) {
+      |      ^~~~
+hashmap.c:121:22: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘pairs’
+  121 |     Pair* current=map->pairs[i];
+      |                      ^~
+Compilation failed
+a80d33f

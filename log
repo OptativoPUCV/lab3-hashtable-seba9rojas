@@ -719,3 +719,9 @@ hashmap.c:161:47: error: ‘HashMap’ {aka ‘struct HashMap’} has no member 
       |                                               buckets
 Compilation failed
 ff7ca3c
+Thu 07 Sep 2023 10:13:17 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|2
+total_score: 50/70
+f3b1646

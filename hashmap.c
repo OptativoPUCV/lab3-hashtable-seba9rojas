@@ -94,11 +94,10 @@ HashMap * createMap(long capacity) {
     return mapa;
 }
 
-
-  
-
+//===========================================
+// Función para eliminar un dato correspondiente al mapa
+//===========================================
 void eraseMap(HashMap * map,  char * key) {
-  
   long i=hash(key,map->capacity);
   long copia=i;
   while(1){
@@ -113,11 +112,11 @@ void eraseMap(HashMap * map,  char * key) {
       return;
     }
   }
-
-
 }
 
 Pair *searchMap(HashMap * map,  char * key) {
+  long i=hash(key,map->capacity);
+  long copia=i;
   
   
 

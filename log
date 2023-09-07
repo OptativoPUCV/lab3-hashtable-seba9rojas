@@ -450,3 +450,14 @@ Thu 07 Sep 2023 07:47:43 PM UTC:
  tests:  8|3
 total_score: 40/70
 db8646a
+Thu 07 Sep 2023 09:44:48 PM UTC: 
+ hashmap.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:119:8: error: unused variable ‘copia’ [-Werror=unused-variable]
+  119 |   long copia=i;
+      |        ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3aa125f

@@ -829,3 +829,16 @@ hashmap.c:92:22: error: expected ‘;’ before ‘}’ token
       | ~                     
 Compilation failed
 2b0fc58
+Thu 07 Sep 2023 10:51:06 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:79:28: error: ‘Pair’ has no member named ‘next’
+   79 |           current = current->next;
+      |                            ^~
+hashmap.c:87:28: error: ‘Pair’ has no member named ‘next’
+   87 |           current = current->next;
+      |                            ^~
+Compilation failed
+5908aa6

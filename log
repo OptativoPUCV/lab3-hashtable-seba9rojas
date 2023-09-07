@@ -650,3 +650,14 @@ hashmap.c:146:23: error: expected ‘;’ before ‘}’ token
       |     ~                  
 Compilation failed
 690c7f9
+Thu 07 Sep 2023 10:08:56 PM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:143:10: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘currents’; did you mean ‘current’?
+  143 |     map->currents = 0;
+      |          ^~~~~~~~
+      |          current
+Compilation failed
+622ce29

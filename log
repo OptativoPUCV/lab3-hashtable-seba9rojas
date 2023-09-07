@@ -86,3 +86,34 @@ hashmap.c:73:13: error: ‘HashMap’ {aka ‘struct HashMap’} has no member n
       |             ^~
 Compilation failed
 f968d44
+Thu 07 Sep 2023 01:49:25 PM UTC: 
+ hashmap.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:60:7: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘key’
+   60 |   mapa->key = malloc(sizeof(int) * capacity);
+      |       ^~
+hashmap.c:61:7: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘value’
+   61 |   mapa->value = malloc(sizeof(int) * capacity);
+      |       ^~
+hashmap.c:63:11: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘key’
+   63 |   if (mapa->key == NULL || mapa->value == NULL) {
+      |           ^~
+hashmap.c:63:32: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘value’
+   63 |   if (mapa->key == NULL || mapa->value == NULL) {
+      |                                ^~
+hashmap.c:65:18: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘key’
+   65 |         free(mapa->key);
+      |                  ^~
+hashmap.c:66:18: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘value’
+   66 |         free(mapa->value);
+      |                  ^~
+hashmap.c:72:13: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘key’
+   72 |         mapa->key[i] = -1;
+      |             ^~
+hashmap.c:73:13: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘value’
+   73 |         mapa->value[i] = 0;
+      |             ^~
+Compilation failed
+5a161eb

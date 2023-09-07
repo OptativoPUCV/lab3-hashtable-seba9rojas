@@ -161,7 +161,7 @@ Pair *nextMap(HashMap * map) {
   while (map->current < map->capacity && map->buckets[map->current] == NULL) {
         map->current--;
     }
-    if (map->current > map->capacity) {
+    if (map->current >= map->capacity) {
         return NULL;
     }
 

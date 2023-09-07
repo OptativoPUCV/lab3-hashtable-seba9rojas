@@ -66,8 +66,8 @@ void enlarge(HashMap * map) {
   enlarge_called = 1; //no borrar (testing purposes)
   
   map->capacity *= 2;
-  Pair ** new_buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
-  if (new_buckets == NULL) {
+  Pair ** newBuckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+  if (newBuckets == NULL) {
        return;
   }
 
@@ -75,10 +75,10 @@ void enlarge(HashMap * map) {
       if (map->buckets[i] != NULL) {
           long newIndex = hash(map->buckets[i]->key,map->capacity) ;
             
-          while (new_buckets[newIndex] != NULL) {
+          while (newBuckets[newIndex] != NULL) {
             newIndex = (newIndex + 1) % map->capacity;
           }
-          new_buckets[newIndex] = map->buckets[i];
+          newBuckets[newIndex] = map->buckets[i];
       }
     }
 

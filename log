@@ -518,3 +518,13 @@ hashmap.c:121:22: error: ‘HashMap’ {aka ‘struct HashMap’} has no member 
       |                      ^~
 Compilation failed
 de2ead1
+Thu 07 Sep 2023 09:52:42 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:121:22: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘pairs’
+  121 |     Pair* current=map->pairs[i];
+      |                      ^~
+Compilation failed
+00c7950

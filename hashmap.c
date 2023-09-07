@@ -51,7 +51,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   while(1){
     Pair* newAux=map->buckets[i];
     if(newAux==NULL || newAux->key==NULL){
-      map->buckets[i]=newPair
+      map->buckets[i]=newPair;
       map->size++;
       return;
     }

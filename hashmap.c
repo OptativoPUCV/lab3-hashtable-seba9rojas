@@ -54,6 +54,7 @@ void enlarge(HashMap * map) {
 HashMap * createMap(long capacity) {
   HashMap* mapa=malloc(sizeof(HashMap));
   if (mapa == NULL){
+    perror("ERROR");
     return NULL;
   }
   mapa->capacity = capacity;
@@ -61,7 +62,7 @@ HashMap * createMap(long capacity) {
   mapa->value = malloc(sizeof(int) * capacity);
 
   if (mapa->key == NULL || mapa->value == NULL) {
-        //perror("Error al asignar memoria para las claves o valores del HashMap");
+        perror("Error al asignar memoria para las claves o valores del HashMap");
         free(mapa->key);
         free(mapa->value);
         free(mapa);

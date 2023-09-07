@@ -156,10 +156,10 @@ Pair *firstMap(HashMap * map) {
 }
 
 Pair *nextMap(HashMap * map) {
-  map->current--;
+  map->current++;
   
-  while (map->current < map->capacity && map->buckets[map->current] == NULL) {
-        map->current--;
+  while (map->current < map->capacity && map->bucket[map->current] == NULL) {
+        map->current++;
     }
     if (map->current >= map->capacity) {
         return NULL;

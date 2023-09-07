@@ -708,3 +708,14 @@ Thu 07 Sep 2023 10:12:58 PM UTC:
  tests:  12|2
 total_score: 50/70
 0125bd5
+Thu 07 Sep 2023 10:13:11 PM UTC: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:161:47: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘bucket’; did you mean ‘buckets’?
+  161 |   while (map->current < map->capacity && map->bucket[map->current] == NULL) {
+      |                                               ^~~~~~
+      |                                               buckets
+Compilation failed
+ff7ca3c

@@ -304,3 +304,48 @@ Thu 07 Sep 2023 07:18:33 PM UTC:
  tests:  5|4
 total_score: 30/70
 4f72c63
+Thu 07 Sep 2023 07:38:38 PM UTC: 
+ hashmap.c | 35 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:105:20: error: ‘value’ undeclared (first use in this function)
+  105 |   newPair->value = value;
+      |                    ^~~~~
+hashmap.c:105:20: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:108:18: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘newPair’
+  108 |     if(strcmp(map->newPair[i]->key)==NULL){
+      |                  ^~
+hashmap.c:108:8: error: too few arguments to function ‘strcmp’
+  108 |     if(strcmp(map->newPair[i]->key)==NULL){
+      |        ^~~~~~
+In file included from test.c:3:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/string.h:140:12: note: declared here
+  140 | extern int strcmp (const char *__s1, const char *__s2)
+      |            ^~~~~~
+In file included from test.c:4:
+hashmap.c:112:8: error: ‘encontrado’ undeclared (first use in this function)
+  112 |     if(encontrado){
+      |        ^~~~~~~~~~
+hashmap.c:114:12: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘newPair’
+  114 |         map->newPair[j]=map->newPair[j+1];
+      |            ^~
+hashmap.c:114:28: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘newPair’
+  114 |         map->newPair[j]=map->newPair[j+1];
+      |                            ^~
+hashmap.c:102:7: error: variable ‘valorEncontrar’ set but not used [-Werror=unused-but-set-variable]
+  102 |   int valorEncontrar=0;
+      |       ^~~~~~~~~~~~~~
+hashmap.c: In function ‘searchMap’:
+hashmap.c:126:20: error: ‘value’ undeclared (first use in this function)
+  126 |   newPair->value = value;
+      |                    ^~~~~
+hashmap.c:131:8: error: expected expression before ‘)’ token
+  131 |     if()
+      |        ^
+hashmap.c:129:8: error: unused variable ‘copia’ [-Werror=unused-variable]
+  129 |   long copia=i;
+      |        ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+6491c15

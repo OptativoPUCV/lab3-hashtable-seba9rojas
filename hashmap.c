@@ -59,10 +59,8 @@ void insertMap(HashMap * map, char * key, void * value) {
     if(i==copia){
       return;
     }
-  }
-    
+  }    
 }
-
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
@@ -99,23 +97,58 @@ HashMap * createMap(long capacity) {
 
   
 
-void eraseMap(HashMap * map,  char * key) {    
+void eraseMap(HashMap * map,  char * key) {
+  int i,j;
+  int valorEncontrar=0;
+  Pair* newPair= (Pair*)malloc(sizeof(Pair));
+  newPair->key = key;
+  newPair->value = value;
+
+  for(i=0;i<map->capacity;i++){
+    if(strcmp(map->newPair[i]->key)==NULL){
+      valorEncontrar=1;
+      break;
+    }
+    if(encontrado){
+      for(j=i;j<map->capacity-1;j++){
+        map->newPair[j]=map->newPair[j+1];
+      }
+      map->capacity--;
+    }
+  }
 
 
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
+Pair *searchMap(HashMap * map,  char * key) {
+  Pair* newPair= (Pair*)malloc(sizeof(Pair));
+  newPair->key = key;
+  newPair->value = value;
+
+  long i=hash(key,map->capacity);
+  long copia=i;
+  while(1){
+    if()
+
+
+    
+  }
+  
+
+  
+
+  
 
 
     return NULL;
 }
 
-Pair * firstMap(HashMap * map) {
+Pair *firstMap(HashMap * map) {
 
     return NULL;
 }
 
-Pair * nextMap(HashMap * map) {
+Pair *nextMap(HashMap * map) {
 
     return NULL;
 }

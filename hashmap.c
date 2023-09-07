@@ -64,8 +64,8 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
   enlarge_called = 1; //no borrar (testing purposes)
+  
   map->capacity *= 2;
-
   Pair ** new_buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
   if (new_buckets == NULL) {
        return;
@@ -86,31 +86,29 @@ void enlarge(HashMap * map) {
     map->buckets = new_buckets;
 }
 
-
-
 //===========================================
 // Función para crear el Mapa
 //===========================================
 HashMap * createMap(long capacity) {
-  HashMap *mapa = malloc(sizeof(HashMap));
-    if (mapa == NULL) {
+  HashMap *map = malloc(sizeof(HashMap));
+    if (map == NULL) {
         return NULL;
     }
 
-    mapa->buckets=malloc(sizeof(Pair *) * capacity);
-    if(mapa->buckets==NULL){
-      free(mapa);
+    map->buckets=malloc(sizeof(Pair *) * capacity);
+    if(map->buckets==NULL){
+      free(map);
       return NULL;
     }
 
-    mapa->capacity = capacity;
-    mapa->size = 0;
-    mapa->current = -1; 
+    map->capacity = capacity;
+    map->size = 0;
+    map->current = -1; 
 
     for (long i = 0; i < capacity; i++) {
-        mapa->buckets[i] = NULL;
+        map->buckets[i] = NULL;
     }
-    return mapa;
+    return map;
 }
 
 //===========================================

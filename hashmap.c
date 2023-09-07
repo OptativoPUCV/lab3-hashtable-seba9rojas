@@ -50,7 +50,6 @@ void enlarge(HashMap * map) {
 
 }
 
-
 HashMap * createMap(long capacity) {
   HashMap *map = malloc(sizeof(HashMap));
     if (map == NULL) {
@@ -58,22 +57,27 @@ HashMap * createMap(long capacity) {
         return NULL;
     }
 
-    map->capacity = capacity;
-    map->pairs = malloc(sizeof(Pair) * capacity);
-    if (map->pairs == NULL) {
-        perror("Error al asignar memoria para los pares del HashMap");
-        free(map);
-        return NULL;
+    mapa->buckets=malloc(sizeof(Pair *) * capacity);
+    if(map->buckets==NULL){
+      perror("Error al asignar memoria para los buckets del HashMap");
+      free(map);
+      return NULL;
     }
 
-    // Inicializar los pares del HashMap
+    map->capacity = capacity;
+    map->size = 0;
+    map->current = -1; // Inicializar el índice del último dato accedido
+
+    // Inicializar los buckets
     for (long i = 0; i < capacity; i++) {
-        map->pairs[i].key = NULL;
-        map->pairs[i].value = NULL;
+        map->buckets[i] = NULL;
     }
 
     return map;
 }
+
+
+  
 
 void eraseMap(HashMap * map,  char * key) {    
 

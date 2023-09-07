@@ -198,3 +198,15 @@ hashmap.c:72:12: error: ‘HashMap’ {aka ‘struct HashMap’} has no member n
       |            ^~
 Compilation failed
 01b7f94
+Thu 07 Sep 2023 02:02:39 PM UTC: 
+ hashmap.c | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:60:5: error: ‘mapa’ undeclared (first use in this function); did you mean ‘map’?
+   60 |     mapa->buckets=malloc(sizeof(Pair *) * capacity);
+      |     ^~~~
+      |     map
+hashmap.c:60:5: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+65bd03c

@@ -115,7 +115,7 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair *searchMap(HashMap * map,  char * key) {
-  long i=hash(key,map->capacity)%map->capacity;
+  long i=hash(key,map->capacity);
 
   while(1){
     Pair* current=map->buckets[i];

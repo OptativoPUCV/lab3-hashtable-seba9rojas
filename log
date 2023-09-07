@@ -298,3 +298,9 @@ hashmap.c:67:1: error: expected identifier or ‘(’ before ‘}’ token
       | ^
 Compilation failed
 643a3d4
+Thu 07 Sep 2023 07:18:33 PM UTC: 
+ hashmap.c | 2 --
+ 1 file changed, 2 deletions(-)
+ tests:  5|4
+total_score: 30/70
+4f72c63

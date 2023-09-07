@@ -142,7 +142,7 @@ Pair *searchMap(HashMap * map,  char * key) {
 Pair *firstMap(HashMap * map) {
     map->current = 0;
 
-    while (map->current < map->capacity || map->buckets[map->current] == NULL) {
+    while (map->current < map->capacity && map->buckets[map->current] == NULL) {
         map->current++;
     }
 

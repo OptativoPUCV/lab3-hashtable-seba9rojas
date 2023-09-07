@@ -63,7 +63,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void enlarge(HashMap * map) {
-  //enlarge_called = 1; //no borrar (testing purposes)
+  enlarge_called = 1; //no borrar (testing purposes)
   Pair ** old_buckets = map->buckets;
 
   map->capacity *= 2;
@@ -77,7 +77,7 @@ void enlarge(HashMap * map) {
       while (current != NULL) {
           insertMap(map, current->key, current->value);
           current = current->next;
-        }
+      }
   }
 
   free(old_buckets);

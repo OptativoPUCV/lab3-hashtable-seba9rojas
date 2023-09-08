@@ -1028,3 +1028,14 @@ Fri 08 Sep 2023 04:13:04 PM UTC:
  tests:  12|1
 total_score: 60/70
 87957e9
+Fri 08 Sep 2023 04:14:22 PM UTC: 
+ hashmap.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:172:10: error: returning ‘int’ from a function with return type ‘Pair *’ makes pointer from integer without a cast [-Werror=int-conversion]
+  172 |   return -1;
+      |          ^
+cc1: all warnings being treated as errors
+Compilation failed
+56aee2d

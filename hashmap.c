@@ -164,15 +164,19 @@ Pair *firstMap(HashMap * map) {
           return map->buckets[i];
       }
   }
-  return NULL; // No hay pares válidos en el HashMap
+  return NULL;
 }
 
 Pair *nextMap(HashMap * map) {
-  while (map->current < map->capacity) {
-      Pair *currentPair = map->buckets[map->current];
-      if (currentPair != NULL) {
-          return currentPair;
+  if (map->current == -1) {
+        return firstMap(map);
+  }
+
+  for (int i = map->current + 1; i < map->capacity; i++) {
+      if (map->buckets[i] != NULL) {
+          map->current = i;
+          return map->buckets[i];
       }
   }
-  return NULL; // No hay más Pairs válidos
+  return NULL; 
 }

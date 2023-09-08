@@ -1134,3 +1134,22 @@ hashmap.c:153:11: error: unused variable ‘pair’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 eebd233
+Fri 08 Sep 2023 09:18:20 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:153:30: error: passing argument 1 of ‘firstMap’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  153 |     Pair *newPair = firstMap(&map);
+      |                              ^~~~
+      |                              |
+      |                              HashMap ** {aka struct HashMap **}
+hashmap.c:151:26: note: expected ‘HashMap *’ {aka ‘struct HashMap *’} but argument is of type ‘HashMap **’ {aka ‘struct HashMap **’}
+  151 | Pair *firstMap(HashMap * map) {
+      |                ~~~~~~~~~~^~~
+hashmap.c:153:11: error: unused variable ‘newPair’ [-Werror=unused-variable]
+  153 |     Pair *newPair = firstMap(&map);
+      |           ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ff45eff

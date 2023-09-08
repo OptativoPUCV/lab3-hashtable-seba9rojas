@@ -150,7 +150,7 @@ Pair *searchMap(HashMap * map,  char * key) {
 
 Pair *firstMap(HashMap * map) {
 
-    Pair *pair = firstMap(&map);
+    Pair *newPair = firstMap(&map);
     
     if (map == NULL || map->buckets == NULL || map->size <= 0) {
         return NULL; 

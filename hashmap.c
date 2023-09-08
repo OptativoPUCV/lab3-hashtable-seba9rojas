@@ -169,5 +169,5 @@ Pair *nextMap(HashMap * map) {
       map->current++;
   }
   map->current = -1; 
-  return -1; 
+  return NULL; 
 }

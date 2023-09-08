@@ -158,8 +158,13 @@ Pair *searchMap(HashMap * map,  char * key) {
 }
 
 Pair *firstMap(HashMap * map) {
-    map->current = -1;
-    return nextMap(map);
+  for (int i = 0; i < map->capacity; i++) {
+      if (map->buckets[i] != NULL) {
+          map->current = i;
+          return map->buckets[i];
+      }
+  }
+  return NULL; // No hay pares válidos en el HashMap
 }
 
 Pair *nextMap(HashMap * map) {

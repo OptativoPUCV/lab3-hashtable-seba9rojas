@@ -148,14 +148,24 @@ Pair *searchMap(HashMap * map,  char * key) {
   return NULL;
 }
 
-Pair *firstMap(HashMap * map) {
 
-    Pair *newPair = firstMap(&map);
-    
+
+Pair *pair = firstMap(&map); // Obtener el primer par
+if (pair != NULL) {
+    char *key = pair->key; // Acceder a la clave
+    void *value = pair->value; // Acceder al valor
+}
+pair = nextMap(&map); // Obtener el siguiente par
+if (pair != NULL) {
+    char *key = pair->key; // Acceder a la clave
+    void *value = pair->value; // Acceder al valor
+}
+
+
+Pair *firstMap(HashMap * map) {
     if (map == NULL || map->buckets == NULL || map->size <= 0) {
         return NULL; 
     }
-
     map->current = -1; 
 
     for (long i = 0; i < map->capacity; i++) {
@@ -164,7 +174,6 @@ Pair *firstMap(HashMap * map) {
             return map->buckets[i];
         }
     }
-
     return NULL;
 }
 

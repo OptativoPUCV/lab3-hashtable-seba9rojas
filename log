@@ -1153,3 +1153,27 @@ hashmap.c:153:11: error: unused variable ‘newPair’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 ff45eff
+Fri 08 Sep 2023 09:19:25 PM UTC: 
+ hashmap.c | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c:153:24: error: ‘map’ undeclared here (not in a function)
+  153 | Pair *pair = firstMap(&map); // Obtener el primer par
+      |                        ^~~
+hashmap.c:154:1: error: expected identifier or ‘(’ before ‘if’
+  154 | if (pair != NULL) {
+      | ^~
+hashmap.c:158:1: error: data definition has no type or storage class [-Werror]
+  158 | pair = nextMap(&map); // Obtener el siguiente par
+      | ^~~~
+hashmap.c:158:1: error: type defaults to ‘int’ in declaration of ‘pair’ [-Werror=implicit-int]
+hashmap.c:158:1: error: conflicting types for ‘pair’
+hashmap.c:153:7: note: previous definition of ‘pair’ was here
+  153 | Pair *pair = firstMap(&map); // Obtener el primer par
+      |       ^~~~
+hashmap.c:159:1: error: expected identifier or ‘(’ before ‘if’
+  159 | if (pair != NULL) {
+      | ^~
+cc1: all warnings being treated as errors
+Compilation failed
+97da958

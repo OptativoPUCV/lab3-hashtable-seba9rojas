@@ -38,9 +38,7 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
-//===========================================
-// Función para insertar un nuevo dato en el mapa
-//===========================================
+
 void insertMap(HashMap * map, char * key, void * value) {
   Pair* newPair= (Pair*)malloc(sizeof(Pair));
   newPair->key = key;
@@ -86,9 +84,7 @@ void enlarge(HashMap * map) {
     map->buckets = newBuckets;
 }
 
-//===========================================
-// Función para crear el Mapa
-//===========================================
+
 HashMap * createMap(long capacity) {
   HashMap *map = malloc(sizeof(HashMap));
     if (map == NULL) {
@@ -111,9 +107,6 @@ HashMap * createMap(long capacity) {
     return map;
 }
 
-//===========================================
-// Función para eliminar un dato correspondiente al mapa
-//===========================================
 void eraseMap(HashMap * map,  char * key) {
   long i=hash(key,map->capacity);
   long copia=i;
@@ -131,9 +124,7 @@ void eraseMap(HashMap * map,  char * key) {
   }
 }
 
-//===========================================
-// Función para buscar un par clave valor en el mapa
-//===========================================
+
 Pair *searchMap(HashMap * map,  char * key) {
   long i=hash(key,map->capacity);
   while(1){
@@ -158,8 +149,14 @@ Pair *searchMap(HashMap * map,  char * key) {
 }
 
 Pair *firstMap(HashMap * map) {
-  map->current = -1;
-  return nextMap(map);
+  for (long i = 0; i < map->capacity; i++) {
+      if (map->buckets[i] != NULL) {
+          map->current = i;
+          return map->buckets[i];
+      }
+  }
+  map->current = -1; 
+  return NULL;
 }
 
 Pair *nextMap(HashMap * map) {

@@ -153,7 +153,7 @@ Pair *firstMap(HashMap * map) {
         return NULL; 
     }
 
-    map->current = 0; 
+    map->current = -1; 
 
     for (long i = 0; i < map->capacity; i++) {
         if (map->buckets[i] != NULL) {

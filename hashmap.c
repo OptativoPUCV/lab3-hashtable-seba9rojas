@@ -155,7 +155,7 @@ Pair *firstMap(HashMap * map) {
       return firstPair->value;
   } 
   else {
-      return -1;
+      return NULL;
   }
 }
 

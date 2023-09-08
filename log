@@ -1022,3 +1022,9 @@ hashmap.c:158:14: error: returning ‘int’ from a function with return type �
 cc1: all warnings being treated as errors
 Compilation failed
 0f495f2
+Fri 08 Sep 2023 04:13:04 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|1
+total_score: 60/70
+87957e9

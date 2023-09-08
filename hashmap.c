@@ -149,8 +149,20 @@ Pair *searchMap(HashMap * map,  char * key) {
 }
 
 Pair *firstMap(HashMap * map) {
-  map->current = -1;
-  return nextMap(map);
+    if (map == NULL || map->buckets == NULL || map->size <= 0) {
+        return NULL; 
+    }
+
+    map->current = 0; 
+
+    for (long i = 0; i < map->capacity; i++) {
+        if (map->buckets[i] != NULL) {
+            map->current = i; 
+            return map->buckets[i];
+        }
+    }
+
+    return NULL;
 }
 
 Pair *nextMap(HashMap * map) {

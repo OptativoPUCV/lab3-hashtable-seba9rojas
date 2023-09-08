@@ -154,8 +154,7 @@ Pair *searchMap(HashMap * map,  char * key) {
 
 
 Pair *firstMap(HashMap * map) {
-  long condicion = map->capacity + map->current;
-  for(int i = map->current ; i < condicion ; i++) {
+  for(int i = map->current+1 ; i < map->capacity ; i++) {
 
     if(map->buckets[i] != NULL && map->buckets[i]->key != NULL ) {
       map->current = i;
@@ -166,8 +165,7 @@ Pair *firstMap(HashMap * map) {
 }
 
 Pair *nextMap(HashMap * map) {
-  int condicion = map->capacity;
-  for(int i = map->current + 1 ; i < condicion ; i++) {
+  for(int i = map->current + 1 ; i < map->capacity ; i++) {
 
     if(map->buckets[i] != NULL && map->buckets[i]->key != NULL ) {
       map->current = i;

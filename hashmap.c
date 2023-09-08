@@ -163,16 +163,11 @@ Pair *firstMap(HashMap * map) {
 }
 
 Pair *nextMap(HashMap * map) {
-  if (map->current == -1) {
-        return NULL;
-    }
-
-  for (int i = map->current + 1; i < map->capacity; i++) {
-      if (map->buckets[i] != NULL) {
-          map->current = i;
-          return map->buckets[i];
+  while (++map->current < map->capacity) {
+      Pair *currentPair = map->buckets[map->current];
+      if (currentPair != NULL) {
+          return currentPair;
       }
   }
-  map->current = -1;
-  return NULL;
+  return NULL; // No hay más Pairs válidos
 }

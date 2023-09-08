@@ -149,6 +149,12 @@ Pair *searchMap(HashMap * map,  char * key) {
 }
 
 Pair *firstMap(HashMap * map) {
+
+    Pair *pair = firstMap(&map);
+    if (pair != NULL) {
+      char *key = pair->key;
+      void *value = pair->value; 
+    }
     if (map == NULL || map->buckets == NULL || map->size <= 0) {
         return NULL; 
     }

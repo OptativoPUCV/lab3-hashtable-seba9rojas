@@ -1221,3 +1221,19 @@ hashmap.c:157:17: error: ‘key’ undeclared (first use in this function); did 
 hashmap.c:157:17: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 45492f3
+Fri 08 Sep 2023 09:26:16 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:157:17: error: expected expression before ‘key_t’
+  157 |     long i=hash(key_t,map->capacity);
+      |                 ^~~~~
+hashmap.c:157:12: error: too few arguments to function ‘hash’
+  157 |     long i=hash(key_t,map->capacity);
+      |            ^~~~
+hashmap.c:26:6: note: declared here
+   26 | long hash( char * key, long capacity) {
+      |      ^~~~
+Compilation failed
+03e46e1

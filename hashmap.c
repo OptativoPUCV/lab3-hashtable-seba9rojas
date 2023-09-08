@@ -150,13 +150,7 @@ Pair *searchMap(HashMap * map,  char * key) {
 
 Pair *firstMap(HashMap * map) {
   map->current = -1; 
-  Pair *firstPair = nextMap(map);
-  if (firstPair != NULL) {
-      return firstPair->value;
-  } 
-  else {
-      return NULL;
-  }
+  return nextMap(map);
 }
 
 Pair *nextMap(HashMap * map) {

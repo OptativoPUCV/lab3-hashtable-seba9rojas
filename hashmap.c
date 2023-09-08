@@ -150,19 +150,11 @@ Pair *searchMap(HashMap * map,  char * key) {
 
 
 
-Pair *pair = firstMap(&map); // Obtener el primer par
-if (pair != NULL) {
-    char *key = pair->key; // Acceder a la clave
-    void *value = pair->value; // Acceder al valor
-}
-pair = nextMap(&map); // Obtener el siguiente par
-if (pair != NULL) {
-    char *key = pair->key; // Acceder a la clave
-    void *value = pair->value; // Acceder al valor
-}
+
 
 
 Pair *firstMap(HashMap * map) {
+    long i=hash(key,map->capacity);
     if (map == NULL || map->buckets == NULL || map->size <= 0) {
         return NULL; 
     }

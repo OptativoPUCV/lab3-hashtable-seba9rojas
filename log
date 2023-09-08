@@ -1177,3 +1177,19 @@ hashmap.c:159:1: error: expected identifier or ‘(’ before ‘if’
 cc1: all warnings being treated as errors
 Compilation failed
 97da958
+Fri 08 Sep 2023 09:25:02 PM UTC: 
+ hashmap.c | 12 ++----------
+ 1 file changed, 2 insertions(+), 10 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:157:17: error: ‘key’ undeclared (first use in this function); did you mean ‘key_t’?
+  157 |     long i=hash(key,map->capacity);
+      |                 ^~~
+      |                 key_t
+hashmap.c:157:17: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:157:10: error: unused variable ‘i’ [-Werror=unused-variable]
+  157 |     long i=hash(key,map->capacity);
+      |          ^
+cc1: all warnings being treated as errors
+Compilation failed
+a163594

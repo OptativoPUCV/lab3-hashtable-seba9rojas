@@ -160,10 +160,10 @@ Pair *firstMap(HashMap * map) {
     }
     map->current = -1; 
 
-    for (long i = 0; i < map->capacity; i++) {
-        if (map->buckets[i] != NULL) {
-            map->current = i; 
-            return map->buckets[i];
+    for (long j = 0; j < map->capacity; j++) {
+        if (map->buckets[j] != NULL) {
+            map->current = j; 
+            return map->buckets[j];
         }
     }
     return NULL;

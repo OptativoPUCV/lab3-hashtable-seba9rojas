@@ -1249,3 +1249,15 @@ hashmap.c:157:17: error: ‘key’ undeclared (first use in this function); did 
 hashmap.c:157:17: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 f82e425
+Fri 08 Sep 2023 09:26:52 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:157:17: error: ‘key’ undeclared (first use in this function); did you mean ‘key_t’?
+  157 |     long i=hash(key,map->capacity);
+      |                 ^~~
+      |                 key_t
+hashmap.c:157:17: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+af5ea71

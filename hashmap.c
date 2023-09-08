@@ -154,7 +154,7 @@ Pair *searchMap(HashMap * map,  char * key) {
 
 
 Pair *firstMap(HashMap * map) {
-    long i=hash(key,map->capacity);
+    
     if (map == NULL || map->buckets == NULL || map->size <= 0) {
         return NULL; 
     }
